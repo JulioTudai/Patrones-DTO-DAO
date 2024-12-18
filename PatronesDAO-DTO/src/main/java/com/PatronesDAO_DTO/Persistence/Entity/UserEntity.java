@@ -4,12 +4,12 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Getter
-@Setter
 public class UserEntity {
 
     @Id
@@ -20,4 +20,6 @@ public class UserEntity {
     private String lastName;
     private String email;
     private byte age;
+
+
 }
