@@ -2,17 +2,24 @@ package com.PatronesDAO_DTO.Persistence.Entity.DAO.Implementation;
 
 import com.PatronesDAO_DTO.Persistence.Entity.DAO.Interfaces.IUserDAO;
 import com.PatronesDAO_DTO.Persistence.Entity.UserEntity;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+
+
 @Repository
 public class UserDaoIMP implements IUserDAO {
 
+    @PersistenceContext
+    private EntityManager em;
+
     @Override
     public List<UserEntity> findAll() {
-        return List.of();
+        return this.em.createQuery("SELECT u FROM UserEntity u").getResultList();
     }
 
     @Override
