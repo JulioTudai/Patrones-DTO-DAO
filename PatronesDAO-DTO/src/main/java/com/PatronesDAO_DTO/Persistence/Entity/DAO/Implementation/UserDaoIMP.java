@@ -5,6 +5,7 @@ import com.PatronesDAO_DTO.Persistence.Entity.UserEntity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,27 +19,33 @@ public class UserDaoIMP implements IUserDAO {
     private EntityManager em;
 
     @Override
+    @Transactional(readOnly = true)
     public List<UserEntity> findAll() {
         return this.em.createQuery("SELECT u FROM UserEntity u").getResultList();
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Optional<UserEntity> findById(Long id) {
-        return Optional.empty();
+        return Optional.ofNullable(this.em.find(UserEntity.class, id));
     }
 
     @Override
-    public UserEntity saveUser(UserEntity userEntity) {
-        return null;
+    @Transactional
+    public void saveUser(UserEntity userEntity) {
+        this.em.persist(userEntity);
+        this.em.flush();
     }
 
     @Override
-    public UserEntity updateUser(UserEntity userEntity) {
-        return null;
+    @Transactional
+    public void updateUser(UserEntity userEntity) {
+        this.em.merge(userEntity);
     }
 
     @Override
-    public UserEntity deletUser(UserEntity userEntity) {
-        return null;
+    @Transactional
+    public void deletUser(UserEntity userEntity) {
+        this.em.remove(userEntity);
     }
 }

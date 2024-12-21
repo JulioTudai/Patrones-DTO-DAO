@@ -11,10 +11,10 @@ public interface IUserDAO {
 
     Optional<UserEntity> findById(Long id);
 
-    UserEntity saveUser(UserEntity userEntity);
+    void saveUser(UserEntity userEntity);
 
-    UserEntity updateUser(UserEntity userEntity);
+    void updateUser(UserEntity userEntity);
 
-    UserEntity deletUser(UserEntity userEntity);
+    void deletUser(UserEntity userEntity);
 
 }
