@@ -1,11 +1,9 @@
 package com.PatronesDAO_DTO.Service.Implementation;
 
-import com.PatronesDAO_DTO.Persistence.Entity.DAO.Implementation.UserDaoIMP;
 import com.PatronesDAO_DTO.Persistence.Entity.DAO.Interfaces.IUserDAO;
 import com.PatronesDAO_DTO.Persistence.Entity.UserEntity;
 import com.PatronesDAO_DTO.Presentation.DTO.UserDTO;
 import com.PatronesDAO_DTO.Service.Interfaces.IUserService;
-import org.apache.catalina.User;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
