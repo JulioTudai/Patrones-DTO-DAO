@@ -1,0 +1,43 @@
+MANEJO DE LISTAS
+
+DTO (Objetos de transferencia de datos): se usan para transferir (comunicar) datos entre software, components o capas.
+propiedades de los DTO
+
+1.Simpicidad: Sirven unicamente para el transporte de datos, sin contener
+logica de negocio o comportamiento complejo.
+
+2.Planos (creo que se refiere a objetos): poseen propiedades basicas y
+accesibles a traves de metodos simples como getters y setters.
+
+3. Serializables: Pueden ser transfomados a formatos como JSON o XML para su transmission entre procesos o servicios.
+
+DAO (Objetos de acceso a datos): Este componente de software proporciona una interface abstracta para algun tipo de base de datos o mecanismo de persistencia.los DAOS Son objetos que se conectan con las bases de datos
+Propiedades de  un DAO:
+
+1. Abstraccion: separan las operaciones e la base de datos con la logica de negocio.
+
+2. Encapsulamiento: Centraliza el acceso a datos, ocultando los detalles de la base de datos.
+
+3.Reusabilidad y mantenibilidad:
+Promueven la eficiencia al gestionar los datos, facilitando actualizaciones y mantenimiento.
+
+
+
+
+para pedirle despues a chat gtp
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Entity
+@Colum
+@Date
+@transactional
+@persistenceContext Y Su objeto entitymanager
+
+dependencias modelMapper
+que function cumplen las dependencias
+
+buscar la teorioa de las capas del curso de spring
+https://www.youtube.com/watch?v=XgUEjrTX9Bs&ab_channel=UnProgramadorNace
+https://www.youtube.com/watch?v=iJ-obKfZWmA&ab_channel=DiegPS-Programaci%C3%B3nyLinux
+MIN 37:53
